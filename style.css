@@ -1,85 +1,80 @@
-/* Reset các margin, padding cho tất cả phần tử */
+/* Cấu trúc cơ bản */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Cài đặt font và nền cho body */
+/* Định dạng cho toàn bộ trang */
 body {
     font-family: Arial, sans-serif;
-    background: #FFC0CB;
+    background: #f5f5f5;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Định dạng container chung */
 .container {
     width: 80%;
     margin: auto;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header với tiêu đề "Happy Wedding" */
+.header {
     text-align: center;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-/* Tiêu đề Happy Wedding với hiệu ứng nhấp nhô */
 .header-title {
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.header-title span {
+    font-size: 3em;
+    color: #FF69B4;
     display: inline-block;
-    animation: bounce 1s infinite;
+    animation: blink 1.5s infinite;
 }
 
-.header-title span:nth-child(odd) {
-    animation-delay: 0.2s;
-}
-
-.header-title span:nth-child(even) {
-    animation-delay: 0.4s;
-}
-
-/* Hiệu ứng nhấp nhô cho chữ */
-@keyframes bounce {
+/* Hiệu ứng nhấp nháy cho tiêu đề */
+@keyframes blink {
     0%, 100% {
-        transform: translateY(0);
+        opacity: 1;
     }
     50% {
-        transform: translateY(-15px);
+        opacity: 0.5;
     }
 }
 
-/* Hiệu ứng cho phần đếm ngược */
+/* Đếm ngược đến ngày cưới */
 .countdown {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.countdown h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 /* Định dạng cho mỗi mục đếm ngược */
 .countdown-item {
+    display: inline-block;
+    margin: 0 15px;
     text-align: center;
-    margin: 0 10px;
     font-size: 30px;
-    color: #FF69B4; /* Màu hồng cho trái tim */
+    color: #FF69B4; /* Màu hồng cho hình tròn */
 }
 
 .countdown-item .heart {
     width: 40px;
     height: 40px;
     background-color: #FF69B4;
-    clip-path: polygon(50% 0%, 0% 35%, 50% 100%, 100% 35%);
+    border-radius: 50%;  /* Sử dụng border-radius: 50% để tạo hình tròn */
     display: inline-block;
     animation: heartbeat 1.5s infinite;
     margin-bottom: 10px;
 }
 
-/* Hiệu ứng trái tim đập */
+/* Hiệu ứng nhịp đập */
 @keyframes heartbeat {
     0%, 100% {
         transform: scale(1);
@@ -95,28 +90,18 @@ body {
     color: #000; /* Màu đen cho số */
 }
 
-/* Phần câu chuyện */
+/* Câu chuyện của chúng tôi */
 .story {
-    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* Phần thư viện ảnh */
-.gallery {
-    margin-top: 40px;
+/* Địa điểm tổ chức */
+.location {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.gallery img {
-    width: 23%;
-    margin: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.gallery img:hover {
-    transform: scale(1.1);
-}
-
-/* Nút chỉ đường */
 .directions-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -125,7 +110,6 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
     text-decoration: none;
 }
 
@@ -133,26 +117,29 @@ body {
     background-color: #0056b3;
 }
 
-/* Địa điểm tổ chức */
-.location iframe {
-    margin-top: 20px;
+/* Thư viện ảnh */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-/* Tối ưu hóa cho các thiết bị di động */
+.gallery img {
+    width: 23%;
+    margin: 1%;
+    border-radius: 10px;
+}
+
+/* Đảm bảo responsive cho các hình ảnh trong thư viện */
 @media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    .header-title {
-        font-size: 40px;
-    }
-
-    .countdown-item {
-        font-size: 20px;
-    }
-
     .gallery img {
         width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery img {
+        width: 100%;
     }
 }
