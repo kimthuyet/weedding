@@ -1,25 +1,26 @@
-// Cài đặt thời gian đếm ngược đến ngày cưới
-const weddingDate = new Date("Dec 31, 2024 00:00:00").getTime();
+// Đặt ngày cưới (thay đổi ngày giờ theo ý bạn)
+const weddingDate = new Date("MAY 25, 2025 00:00:00").getTime();
 
-const countdown = setInterval(function() {
-    let now = new Date().getTime();
-    let timeLeft = weddingDate - now;
+// Cập nhật đếm ngược mỗi giây
+const interval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-    let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    // Tính toán các giá trị thời gian
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").querySelector(".heart").innerHTML = days < 10 ? "0" + days : days;
-    document.getElementById("hours").querySelector(".heart").innerHTML = hours < 10 ? "0" + hours : hours;
-    document.getElementById("minutes").querySelector(".heart").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-    document.getElementById("seconds").querySelector(".heart").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+    // Hiển thị kết quả
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
 
-    if (timeLeft < 0) {
-        clearInterval(countdown);
-        document.getElementById("days").querySelector(".heart").innerHTML = "00";
-        document.getElementById("hours").querySelector(".heart").innerHTML = "00";
-        document.getElementById("minutes").querySelector(".heart").innerHTML = "00";
-        document.getElementById("seconds").querySelector(".heart").innerHTML = "00";
+    // Nếu đếm ngược kết thúc
+    if (distance < 0) {
+        clearInterval(interval);
+        document.getElementById("timer").innerHTML = "Đám cưới đã đến!";
     }
 }, 1000);
