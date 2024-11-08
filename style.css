@@ -1,58 +1,49 @@
-/* Reset CSS */
+/* Đảm bảo rằng mọi phần tử trong trang có box-sizing hợp lý */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Cài đặt nền và font chữ */
+/* Cài đặt font chữ và màu nền chung cho body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFC0CB;
+    background: #FFC0CB; /* Màu nền hồng nhạt */
     color: #333;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
-/* Header với ảnh nền và hiệu ứng chữ nhấp nhô */
-.header {
-    position: relative;
-    height: 300px;
-    background-image: url('images/background.jpg'); /* Đặt đường dẫn ảnh nền */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
+/* Phần tiêu đề "Happy Wedding" */
 .header-title {
     font-size: 48px;
-    color: pink;
-    display: flex;
-    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    color: #FF69B4; /* Màu hồng */
+    animation: wave 2s ease-in-out infinite;
 }
 
-.header-title span {
-    display: inline-block;
-    animation: wave 1.5s ease-in-out infinite;
-    animation-delay: calc(0.1s * var(--i));
+/* Hiệu ứng sóng cho chữ "Happy Wedding" */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
-/* Countdown */
-#countdown-timer {
+/* Phần đếm ngược */
+.countdown {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 20px; /* Điều chỉnh khoảng cách giữa phần đếm ngược và phần header */
 }
 
+/* Định dạng từng item trong phần đếm ngược */
 .countdown-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    color: #FF69B4;
 }
 
 .heart {
@@ -69,12 +60,7 @@ body {
     animation: heartbeat 1s infinite alternate;
 }
 
-.label {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-}
-
+/* Hiệu ứng trái tim đập */
 @keyframes heartbeat {
     0% {
         transform: scale(1);
@@ -87,12 +73,52 @@ body {
     }
 }
 
-/* Hiệu ứng sóng nhấp nhô cho chữ */
-@keyframes wave {
-    0%, 60%, 100% {
-        transform: translateY(0);
-    }
-    30% {
-        transform: translateY(-10px);
-    }
+/* Thư viện ảnh - Sắp xếp 4 hình ảnh trên mỗi hàng */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 23%; /* Đảm bảo 4 hình ảnh trong mỗi hàng */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Hiệu ứng hover cho ảnh */
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+/* Các section có khoảng cách thích hợp */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Phần nút chỉ đường */
+.directions-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.directions-button:hover {
+    background-color: #0056b3;
 }
