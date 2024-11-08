@@ -8,32 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header với tiêu đề "Happy Wedding" và đếm ngược thời gian -->
+        <!-- Header với hình nền -->
         <header class="header">
             <h1 class="header-title">
                 <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span> 
                 <span>W</span><span>e</span><span>d</span><span>d</span><span>i</span><span>n</span><span>g</span>
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <div class="heart" id="days"></div>
-                        <p>Ngày</p>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="heart" id="hours"></div>
-                        <p>Giờ</p>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="heart" id="minutes"></div>
-                        <p>Phút</p>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="heart" id="seconds"></div>
-                        <p>Giây</p>
-                    </div>
-                </div>
             </h1>
+            <div class="countdown">
+                <div class="time" id="days">00</div>
+                <div class="time" id="hours">00</div>
+                <div class="time" id="minutes">00</div>
+                <div class="time" id="seconds">00</div>
+            </div>
         </header>
-        
+
         <!-- Câu chuyện của chúng tôi -->
         <section class="story">
             <h2>Câu chuyện của chúng tôi</h2>
@@ -61,16 +49,17 @@
         <!-- Thư viện ảnh -->
         <section class="gallery">
             <h2>Thư viện ảnh</h2>
-            <img src="images/photo1.jpg" alt="Ảnh cưới 1">
-            <img src="images/photo2.jpg" alt="Ảnh cưới 2">
-            <img src="images/photo3.jpg" alt="Ảnh cưới 3">
-            <img src="images/photo4.jpg" alt="Ảnh cưới 4">
-            <img src="images/photo5.jpg" alt="Ảnh cưới 5">
-            <img src="images/photo6.jpg" alt="Ảnh cưới 6">
+            <div class="image-gallery">
+                <img src="images/photo1.jpg" alt="Ảnh cưới 1">
+                <img src="images/photo2.jpg" alt="Ảnh cưới 2">
+                <img src="images/photo3.jpg" alt="Ảnh cưới 3">
+                <img src="images/photo4.jpg" alt="Ảnh cưới 4">
+                <img src="images/photo5.jpg" alt="Ảnh cưới 5">
+                <img src="images/photo6.jpg" alt="Ảnh cưới 6">
+            </div>
         </section>
     </div>
 
-    <!-- JavaScript cho phần đếm ngược -->
     <script src="script.js"></script>
 </body>
 </html>
