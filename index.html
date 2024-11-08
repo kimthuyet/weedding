@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp cưới của Kim Thuyết & Nhật Hạ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header với tiêu đề "Happy Wedding" có hiệu ứng nhấp nhô -->
+        <header class="header">
+            <h1 class="header-title">
+                <span>H</span><span>a</span><span>p</span><span>p</span><span>y</span> 
+                <span>W</span><span>e</span><span>d</span><span>d</span><span>i</span><span>n</span><span>g</span>
+            </h1>
+        </header>
+        
+        <!-- Câu chuyện của chúng tôi -->
+        <section class="story">
+            <h2>Câu chuyện của chúng tôi</h2>
+            <p>Một câu chuyện tình yêu đầy ý nghĩa và cảm động...</p>
+        </section>
+
+        <!-- Địa điểm tổ chức với bản đồ Google và nút chỉ đường -->
+        <section class="location">
+            <h2>Địa điểm tổ chức</h2>
+            <p>Khách sạn Đà Lạt Palace</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d295.27877683974464!2d108.37560707891924!3d15.774320177636683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1svi!2s!4v1731035252664!5m2!1svi!2s" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <br>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=15.774320177636683,108.37560707891924" target="_blank">
+                <button class="directions-button">Chỉ đường</button>
+            </a>
+        </section>
+
+        <!-- Thư viện ảnh -->
+        <section class="gallery">
+            <h2>Thư viện ảnh</h2>
+            <img src="images/photo1.jpg" alt="Ảnh cưới 1">
+            <img src="images/photo2.jpg" alt="Ảnh cưới 2">
+            <img src="images/photo3.jpg" alt="Ảnh cưới 3">
+            <img src="images/photo4.jpg" alt="Ảnh cưới 4">
+            <img src="images/photo5.jpg" alt="Ảnh cưới 5">
+            <img src="images/photo6.jpg" alt="Ảnh cưới 6">
+        </section>
+
+        <!-- Đếm ngược đến ngày cưới -->
+        <section class="countdown">
+            <h2>Đếm ngược đến ngày cưới</h2>
+            <div id="countdown-timer">
+                <div class="countdown-item" id="days">
+                    <div class="heart">00</div>
+                    <div class="label">Ngày</div>
+                </div>
+                <div class="countdown-item" id="hours">
+                    <div class="heart">00</div>
+                    <div class="label">Giờ</div>
+                </div>
+                <div class="countdown-item" id="minutes">
+                    <div class="heart">00</div>
+                    <div class="label">Phút</div>
+                </div>
+                <div class="countdown-item" id="seconds">
+                    <div class="heart">00</div>
+                    <div class="label">Giây</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript cho phần đếm ngược -->
+    <script src="script.js"></script>
+</body>
+</html>
